@@ -1,0 +1,45 @@
+/*基础css样式*/
+.contain{position:relative;top:5rem;perspective:16rem;z-index:9999;animation:rotate-frame 25s linear infinite;color:#fff;font-size:30px;text-align:center;}
+.box{animation:rotate 25s ease 0s normal none infinite running;height:2.4rem;margin:0 auto;position:relative;transform-style:preserve-3d;width:2.4rem;}
+.face{backface-visibility:hidden;background-color:#fae48c;height:2.4rem;opacity:0.8;position:absolute;width:2.4rem;}
+.box .one{background-color:#fae48c;transform:rotateX(90deg) translateZ(1.2rem);}
+.box .two{background-color:#9900CC;transform:translateZ(1.2rem);}
+.box .three{transform:rotateY(90deg) translateZ(1.2rem);background-color:yellow;}
+.box .four{transform:rotateY(180deg) translateZ(1.2rem);background-color:green;}
+.box .five{transform:rotateY(-90deg) translateZ(1.2rem);background-color:greenyellow;}
+.box .six{transform:rotateX(-90deg) translateZ(1.2rem) rotate(180deg);background-color:black;}
+html,body{font-size:15px;width:100%;height:100%;padding:0;margin:0;overflow-x:hidden;}
+*{user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+::-webkit-input-placeholder{color:#997169;}
+.tip{font-size:22px;color:#333;padding-top:30px;font-family:"yw";}
+body,html{width:100%;}
+#main{width:7.5rem;height:100%;position:relative;background:url(../images/000.jpg) no-repeat top center;background-size:100% 100%;overflow:hidden;}
+
+/*.topleft,.topright{position:absolute;top:5px;width:3.75rem;height:2.2rem;background:red;}
+.topleft{left:0;-webkit-animation:tipRight 1s infinite alternate;background:url(dist/images/tip.png) no-repeat left center;background-size:contain;}
+.topright{right:0;-webkit-animation:tipLeft 1s infinite alternate;background:url(dist/images/tip.png) no-repeat left center;background-size:contain;}
+.topcenter{position:absolute;width:.75rem;height:1.35rem;top:0;left:50%;transform:translateX(-50%);background:url(dist/images/XIN.gif) no-repeat bottom center;background-size:contain;-webkit-animation:light 1s infinite alternate;}*/
+.btm{position:absolute;bottom:0;left:0;width:7.5rem;height:3.5rem;background:url(../images/btm.png) no-repeat center;background-size:cover;z-index:10000;}
+
+/*huaban*/
+#huaban{position:absolute;top:0;left:0;width:100%;height:100%;z-index:8888;opacity:0.8;}
+.snowfall-flakes{animation:sakura 1s linear 0s infinite;}
+@keyframes sakura{
+    0%{transform:rotate3d(0,0,0,0deg);}
+    25%{transform:rotate3d(1,1,0,60deg);}
+    50%{transform:rotate3d(1,1,0,0deg);}
+    75%{transform:rotate3d(1,0,0,60deg);}
+    100%{transform:rotate3d(1,0,0,0deg);}
+}
+
+/*top*/
+.topl,.topr{position:absolute;top:-2%;z-index:9999;background:url(../images/6.png) no-repeat center;background-size:contain;}
+.topl{left:0%;width:3rem;height:3.5rem;}
+.topr{right:0%;width:3rem;height:5rem;z-index:9999;background:url(../images/7.png) no-repeat center;background-size:contain;}
+
+/*中心 我们结婚啦*/
+.wmjhla{margin:1.25rem auto 0.20rem;width:5rem;height:4rem;z-index:9999;background:url(../images/5.png) no-repeat center;background-size:100% 100%;}
+
+/*mingzi*/
+.name{margin:0.2rem auto 0rem;width:4.5rem;height:1.5rem;z-index:9999;background:url(../images/8.png) no-repeat center;background-size:100% 100%;}
+.dizhi{margin:0 auto 0.20rem;width:4.5rem;height:4.2rem;z-index:9999;background:url(../images/9.png) no-repeat center;background-size:100% 100%;}

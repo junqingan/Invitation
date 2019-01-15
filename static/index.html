@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+    <meta name="MobileOptimized" content="320">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <meta name="full-screen" content="yes">
+    <!-- <embed src="dist/images/wuyue.mp3" hidden="true" autostart="true" loop="true"> -->
+    <link rel="stylesheet" href="dist/css/ani.min.css">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <script src="dist/js/lib/jquery.min.js"></script>
+    <script src="dist/js/lib/snowfall.jquery.min.js"></script>
+    <script src="dist/js/lib/snowfall.min.js"></script>
+    <script type="text/javascript">
+    (function(designW) {
+        var docEl = document.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / designW) + 'px';
+            };
+        if (!document.addEventListener) return;
+        recalc();
+        window.addEventListener(resizeEvt, recalc, false);
+        document.addEventListener('DOMContentLoaded', recalc, false);
+    })(750);
+    </script>
+    <title>@所有人 有件事儿分享给大家...</title>
+</head>
+
+<body>
+    <div id="main">
+        <audio class="audio" id="audiojs" autoplay src="dist/images/wuyue.mp3"></audio>
+        <div id="huaban"></div>
+        <div class="topl"></div>
+        <div class="topr"></div>
+        <div class="wmjhla"></div>
+        <div class="name"></div>
+        <div class="dizhi"></div>
+        <div class="btm"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#huaban').snowfall({ image: "./dist/images/1.png", flakeCount: 30, minSpeed: 1, minSize: 8, maxSize: 15, });
+            $('#huaban').snowfall({ image: "./dist/images/2.png", flakeCount: 15, minSpeed: 1, minSize: 8, maxSize: 10, });
+            $('#huaban').snowfall({ image: "./dist/images/3.png", flakeCount: 10, minSpeed: 1, minSize: 8, maxSize: 5, });
+        });
+    </script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audiojs');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function() {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+        $(document).one('touchstart',
+            function(e) {
+                $('#audiojs').get(0).touchstart = true;
+                $('#audiojs').get(0).play();
+                return false;
+            });
+    }
+    </script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+    <script type="text/javascript">
+        var imgUrl = 'http://junqingan.com/dist/images/11.png';
+        var lineLink = 'http://junqingan.com';
+        var descContent = "我要结婚啦~~";
+        var shareTitle = '@所有人 有件事儿分享给大家...';
+        var appid = '';
+
+        function shareFriend() { WeixinJSBridge.invoke('sendAppMessage', { "appid": appid, "img_url": imgUrl, "img_width": "300", "img_height": "300", "link": lineLink, "desc": descContent, "title": shareTitle }, function(res) { alert('2123'); }) }
+
+        function shareTimeline() { WeixinJSBridge.invoke('shareTimeline', { "img_url": imgUrl, "img_width": "200", "img_height": "200", "link": lineLink, "desc": descContent, "title": shareTitle }, function(res) { alert('456'); }); }
+
+        function shareWeibo() { WeixinJSBridge.invoke('shareWeibo', { "content": descContent, "url": lineLink, }, function(res) { alert('789'); }); };
+    </script>
+</body>
+
+</html>
